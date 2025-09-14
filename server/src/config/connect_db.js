@@ -3,10 +3,10 @@ import { MONGODB_URI } from './server_config.js';
 
 const connectDb = async () => {
     try {
-        await mongoose.connect(MONGODB_URI)
+        await mongoose.connect(`${MONGODB_URI}/hotel-booking`)
             .then(() => console.log("DB connected successfully"));
     } catch (error) {
-        console.error("Error connecting to DB:", error);
+        console.error("Error connecting to DB:", error.message);
     }
 };
 
