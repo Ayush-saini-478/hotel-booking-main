@@ -10,3 +10,24 @@ export const getUserData = async (req, res) => {
         res.json({ success: false, message: error.message })
     }
 }
+
+
+// Store user recent searched cities
+
+export const storeRecentSearchedCities = async (req, res) => {
+    try {
+        const { recentSearchedCity } = req.body;
+        const user = await req.user;
+
+        if (user.recentSearchCities.length < 3) {
+            user.recentSearchCities.push(recentSearchedCity);
+        } else {
+            user.recentSearchCities.shift();
+            user.recentSearchCities.push(recentSearchedCity);
+        }
+        await user.save();
+        res.json({ success: true, message: "City added" });
+    } catch (error) {
+        res.json({ success: false, message: error.message });
+    }
+}

@@ -5,6 +5,7 @@ import { PORT } from './config/server_config.js';
 import { clerkMiddleware } from '@clerk/express';
 import clerkWebhooks from './controllers/clerkWebhooks.js';
 import userRouter from './routes/userRoutes.js';
+import hotelRouter from './routes/hotelRoutes.js';
 
 
 await connectDb();
@@ -20,10 +21,12 @@ app.use(clerkMiddleware());
 // API to listen to Clerk Webhooks
 app.use("/api/clerk", clerkWebhooks);
 
-app.get('/', (req, res) => {
-    return res.send("API is working");
-});
+app.get('/', (req, res) => res.send("API is working"));
 app.use('/api/user', userRouter);
+app.use('/api/hotels', hotelRouter);
+
+
+
 app.listen(PORT, async () => {
     console.log(`Server is running on port ${PORT}`);
 });
