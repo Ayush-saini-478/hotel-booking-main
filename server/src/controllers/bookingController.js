@@ -1,6 +1,7 @@
 import Booking from '../models/Booking.js'
 import Room from '../models/Room.js';
 import Hotel from '../models/Hotel.js';
+import sendMail from '../utils/sendmail.js';
 // Function to check availability of room
 const checkAvailability = async ({ checkInDate, checkOutDate, room }) => {
     try {
@@ -61,6 +62,7 @@ export const createBooking = async (req, res) => {
             checkOutDate,
             totalPrice
         })
+        await sendMail({ req, roomData, booking });
         res.json({ success: true, message: "Booking created successfully" });
 
     } catch (error) {
