@@ -8,7 +8,7 @@ import userRouter from './routes/userRoutes.js';
 import hotelRouter from './routes/hotelRoutes.js';
 import connectCloudinary from './config/cloudinary.js';
 import roomRouter from './routes/roomRoutes.js';
-
+import bookingRouter from './routes/bookingRoutes.js';
 
 await connectDb();
 await connectCloudinary();
@@ -29,7 +29,7 @@ app.get('/', (req, res) => res.send("API is working"));
 app.use('/api/user', userRouter);
 app.use('/api/hotels', hotelRouter);
 app.use('/api/rooms', roomRouter);
-
+app.use('/api/bookings', bookingRouter);
 
 app.listen(PORT, async () => {
     console.log(`Server is running on port ${PORT}`);
