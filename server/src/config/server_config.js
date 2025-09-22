@@ -10,7 +10,7 @@ const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
 const CLOUDINARY_API_KEY = process.env.CLOUDINARY_API_KEY;
 const CLOUDINARY_API_SECRET = process.env.CLOUDINARY_API_SECRET;
 const SENDER_EMAIL = process.env.SENDER_EMAIL;
-const SMTP_USER = process.env.SMTP_USER;
+const SMTP_USER = process.env.SMTP_USER;      
 const SMTP_PASS = process.env.SMTP_PASS;
 const CURRENCY = process.env.CURRENCY;
 export {

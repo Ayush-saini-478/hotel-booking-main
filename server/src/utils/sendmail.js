@@ -1,5 +1,5 @@
-import transporter from "../config/nodemailer"
-import { CURRENCY, SENDER_EMAIL } from "../config/server_config"
+import transporter from "../config/nodemailer.js"
+import { CURRENCY, SENDER_EMAIL } from "../config/server_config.js"
 
 const sendMail = async ({ req, roomData, booking }) => {
     const mailOptions = {

@@ -1,14 +1,14 @@
 import nodemailer from 'nodemailer';
-import { SMTP_PASS, SMTP_USER } from './server_config';
+import { SMTP_PASS, SMTP_USER } from './server_config.js';
 
 // Create a test account or replace with real credentials.
 const transporter = nodemailer.createTransport({
-    host: "",//smtp hoster
+    host: "smtp-relay.brevo.com",//smtp hoster
     port: 587,
     auth: {
         user: SMTP_USER,
         pass: SMTP_PASS,
-    },
+    },         
 });
 
 
