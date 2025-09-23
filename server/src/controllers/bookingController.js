@@ -34,6 +34,9 @@ export const checkAvailabilityAPI = async (req, res) => {
 export const createBooking = async (req, res) => {
     try {
         const { room, checkInDate, checkOutDate, guests } = req.body;
+        console.log(room, checkInDate, checkOutDate, guests);
+        console.log(req.body);
+
         const user = req.user._id;
         //before booking check availability
         const isAvailable = await checkAvailability({ checkInDate, checkOutDate, room });
