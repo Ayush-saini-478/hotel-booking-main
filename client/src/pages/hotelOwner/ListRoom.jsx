@@ -19,7 +19,7 @@ const ListRoom = () => {
                 }
             );
             if (data.success) {
-                setRooms(data.rooms);
+                setRooms(data.allRooms);
             } else {
                 toast.error(data.message);
             }
