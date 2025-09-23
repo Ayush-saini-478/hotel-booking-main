@@ -7,7 +7,7 @@ import { useAppContext } from '../context/AppContext'
 const CheckBox = ({ label, selected = false, onchange = () => { } }) => {
     return (
         <label className='flex gap-3 items-center cursor-pointer mt-2 text-sm' >
-            <input type="checkbox" checked={selected} onChange={(e) => onChange(e.target.checked, label)} />
+            <input type="checkbox" checked={selected} onChange={(e) => onchange(e.target.checked, label)} />
             <span className='font-light select-none'>{label}</span>
         </label>
     )
