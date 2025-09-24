@@ -34,9 +34,6 @@ export const checkAvailabilityAPI = async (req, res) => {
 export const createBooking = async (req, res) => {
     try {
         const { room, checkInDate, checkOutDate, guests } = req.body;
-        console.log(room, checkInDate, checkOutDate, guests);
-        console.log(req.body);
-
         const user = req.user._id;
         //before booking check availability
         const isAvailable = await checkAvailability({ checkInDate, checkOutDate, room });
@@ -81,7 +78,7 @@ export const getUserBookings = async (req, res) => {
         const user = req.user._id;
         const bookings = await Booking.find({ user }).populate("room hotel")
             .sort({ createdAt: -1 });
-        res.json({ succes: true, bookings });
+        res.json({ success: true, bookings });
     } catch (error) {
         res.json({ success: false, message: "Failed to fetch booking" });
     }

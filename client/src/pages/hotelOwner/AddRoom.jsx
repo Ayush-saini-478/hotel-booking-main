@@ -21,8 +21,8 @@ const AddRoom = () => {
     roomType: '',
     pricePerNight: 0,
     amenities: {
-      'Free Wifi': false,
-      'Free Brakfast': false,
+      'Free WiFi': false,
+      'Free Breakfast': false,
       'Room Service': false,
       'Mountain View': false,
       'Pool Access': false
