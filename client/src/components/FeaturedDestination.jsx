@@ -16,7 +16,7 @@ const FeaturedDestination = () => {
       />
 
       {/* Horizontal scroll container */}
-      <div className="flex overflow-x-auto gap-6 mt-20 pb-4">
+      <div className='flex flex-wrap items-center justify-center gap-6 mt-20'>
         {rooms.slice(0, 4).map((room, index) => (
           <div key={room._id} className="flex-shrink-0 w-[300px]">
             <HotelCard room={room} index={index} />

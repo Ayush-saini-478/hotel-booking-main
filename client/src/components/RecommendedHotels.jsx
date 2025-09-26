@@ -27,7 +27,9 @@ const RecommendedHotels = () => {
 
             <div className='flex flex-wrap items-center justify-center gap-6 mt-20'>
                 {recommended.slice(0, 4).map((room, index) => (
+                <div className='flex-shrink-0 w-[300px]'>
                     <HotelCard key={room._id} room={room} index={index} />
+                </div>
                 ))}
             </div>
             
