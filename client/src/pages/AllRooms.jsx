@@ -41,7 +41,7 @@ const AllRooms = () => {
     const roomTypes = [
         "Single Bed",
         "Double Bed",
-        "Luxury Bed",
+        "Luxury Room",
         "Family Suite",
     ];
 
